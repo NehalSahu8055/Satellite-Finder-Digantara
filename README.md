@@ -6,8 +6,8 @@ This is a solution to the Satellite Finder for DIGANTARA.
 
 ### Links
 
-- Solution URL: [Click here](https://github.com/NehalSahu8055/Responsive-Product-Preview-remastered)
-- Live Site URL: [Click here](https://product-preview-remastered-nehal.netlify.app/)
+- Solution URL: [Click here](https://github.com/NehalSahu8055/Satellite-Finder-Digantara)
+- Live Site URL: [Click here](https://satellite-finder-digantara-nehal.netlify.app/)
 
 ## ABOUT
 
