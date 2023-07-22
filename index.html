@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Satellite Finder" />
+    <meta
+      name="keywords"
+      content="Digantara, Satellite Finder , nehal, Responsive Designs"
+    />
+
+    <link rel="icon" type="image" href="assets/images/advanced-satellite.jpg" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+    />
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Linking CSS stylesheet -->
+    <link rel="stylesheet" href="src/css/output.min.css" />
+
+    <!-- JS Linking -->
+    <script defer src="src/js/script.min.js"></script>
+    <title>Satellite Finder</title>
+  </head>
+  <body class="py-clamp1 flex justify-center items-center min-h-screen">
+    <main
+      class="w-[90%] max-w-[1440px] flex flex-col-reverse gap-7 justify-between min-[1020px]:flex-row items-center"
+    >
+      <div class="image-satellite absolute">
+        <img
+          class="animate-spin2 w-[31.25rem]"
+          src="/assets/images/satellite-transparent-background-9.png"
+          alt="satellite image which is revolving around its axis"
+        />
+      </div>
+
+      <button
+        class="satellites-explore bg-[image:url(./assets/images/image-moon.webp)] outline-2 hover:outline-double hover:outline-blue-600 transition-all ease-in-out duration-300 w-40 h-40 bg-contain bg-no-repeat animate-reverse-spin flex justify-center items-center text-white relative rounded-full hover:cursor-pointer"
+      >
+        <p class="absolute animate-spin2 flex">Satellites</p>
+      </button>
+      <div
+        class="hidden satellite-find min-h-screen md:min-h-fit w-full p-clamp1 pt-1 pb-4 md:pt-2 md:pb-10 outline-2 outline-double outline-blue-600 flex flex-col flex-grow bg-[var(--blurBg)] backdrop-blur-[4rem] rounded-2xl bg-blur animate-opacity"
+      >
+        <div
+          class="logo-digantra md:absolute flex justify-center items-center mx-auto md:ml-3 -mt-6 outline-2 outline-double outline-blue-600 px-4 md:px-5 py-[0.3rem] bg-gray-700 backdrop-blur-[4rem] rounded-xl animate-opacity"
+        >
+          <a href="https://digantara.co.in/" target="_blank"
+            ><img
+              class="w-[10.625rem]"
+              src="/assets/images/Digantara_Logo-20.png"
+              alt="Logo | Digantra"
+          /></a>
+        </div>
+        <button
+          class="close-btn self-end p-1 shadow-xxl mr-clamp1 mb-8 max-sm:mt-0 mt-2 backdrop-blur-[2rem] rounded-full hover:bg-indigo-600 transition-all ease-in-out duration-300"
+        >
+          <span class="sr-only">Close Button</span>
+          <img
+            src="/assets/images/close-icon.svg"
+            class="w-[0.9375rem]"
+            alt=""
+          />
+        </button>
+        <div class="input-data flex gap-6 flex-col relative">
+          <input
+            class="search flex flex-grow px-4 md:px-5 h-11 shadow-xxl focus:outline-double focus:outline-blue-600 border-[0.1rem] rounded-2xl text-sm focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white transition-all ease-in-out duration-300"
+            type="text"
+            placeholder="Satellite name / NORAD CAT ID"
+            name="satelliteName"
+            value=""
+            novalidate
+          />
+
+          <button class="submit-btn" type="submit" tabindex="0">
+            <span class="sr-only">Submit Button</span>
+            <img
+              class="search-icon__rocket animate-pulse w-[2rem] inline-flex right-5 top-[0.375rem] hover:cursor-pointer absolute"
+              src="/assets/images/icons8-rocket-64.png"
+              alt="rocket icon for submit button"
+            />
+          </button>
+
+          <form
+            class="dropdown-selection pb-7 flex gap-4 w-full max-[920px]:flex-col"
+          >
+            <!-- country -->
+            <label class="sr-only" for="country-code"
+              >Choose Country Code</label
+            >
+            <select
+              class="flex-grow outline-2 shadow-xxl focus:outline-double focus:outline-blue-600 transition-all ease-in-out duration-300 country-code__dropdown px-4 md:px-5 flex border-[0.1rem] rounded-2xl text-sm w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              name="countryCode"
+              id="country-code"
+            >
+              <option value="select">Country Code</option>
+              <!-- other options dynamically handled by JS -->
+            </select>
+
+            <!-- orbit -->
+            <label class="sr-only" for="orbit-code">Choose Orbit Code</label>
+            <select
+              class="flex-grow outline-2 shadow-xxl focus:outline-double focus:outline-blue-600 transition-all ease-in-out duration-300 orbit-code__dropdown px-4 md:px-5 flex border-[0.1rem] rounded-2xl text-sm w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              name="orbitCode"
+              id="orbit-code"
+            >
+              <option value="select">Orbit Code</option>
+              <!-- other options dynamically handled by JS -->
+            </select>
+
+            <!-- object type -->
+            <label class="sr-only" for="object-type">Choose Object Type</label>
+            <select
+              class="flex-grow outline-2 shadow-xxl focus:outline-double focus:outline-blue-600 transition-all ease-in-out duration-300 object-type__dropdown px-4 md:px-5 flex border-[0.1rem] rounded-2xl text-sm w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              name="object-type"
+              id="object-type"
+            >
+              <option value="select">Object Type</option>
+              <!-- other options dynamically handled by JS -->
+            </select>
+          </form>
+        </div>
+        <div
+          class="search-result flex flex-col gap-3 flex-grow flex-wrap rounded-2xl"
+        >
+          <div
+            class="result-text flex gap-2 mb-7 shadow-xxl transition-all ease-in-out duration-300 px-4 md:px-5 w-fit border-[0.1rem] rounded-2xl text-sm p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-300 focus:ring-blue-500 focus:border-blue-500"
+          >
+            <p>Searched results will be here:</p>
+            <img
+              class="w-[0.9375rem]"
+              src="/assets/images/arrow-down.svg"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="searching-satellite flex flex-wrap gap-6 justify-center items-center flex-grow"
+          ></div>
+        </div>
+
+        <div
+          class="pagination flex items-center justify-center border-t border-gray-600 py-6"
+        >
+          <button
+            class="prev-page px-3 py-1 text-white bg-gray-700 border border-gray-600 rounded-md hover:bg-gray-600 focus:outline-none focus:ring focus:ring-blue-500"
+            disabled
+          >
+            Prev
+          </button>
+          <span
+            class="current-page px-3 py-1 text-white bg-gray-700 border border-gray-600 rounded-md mx-4"
+            >1</span
+          >
+          <button
+            class="next-page px-3 py-1 text-white bg-gray-700 border border-gray-600 rounded-md hover:bg-gray-600 focus:outline-none focus:ring focus:ring-blue-500"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <div class="astronaut-pic flex flex-col gap-4 min-[1020px]:flex-row">
+        <div
+          class="hidden instruction shadow-xxl flex mx-auto self-start animate-opacity text-white bg-[var(--blurBg)] p-clamp2 backdrop-blur-[1rem] rounded-xl rounded-br-none"
+        >
+          Hello Visitor! Gald you are here.<br />
+          Click on Satellites to know more.
+        </div>
+
+        <img
+          class="astronaut animate-live w-[25rem]"
+          src="/assets/images/kisspng-astronaut-http-404-lockerz-com-astronaut-png-image-5a77e9e099e1b2.8243308115178080966303.png"
+          alt="astronaut for giving instructions"
+        />
+      </div>
+    </main>
+  </body>
+</html>
